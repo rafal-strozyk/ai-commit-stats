@@ -1,0 +1,98 @@
+docs/decisions.md
+  s_0ef73619c23226::t_a8ddc4a4221095 1-9,11-25
+  s_0ef73619c23226::t_ef2ee035134102 10
+.agents/skills/systematic-debugging/condition-based-waiting-example.ts
+  s_0ef73619c23226::t_cc3579809103d1 1-30,32-71,73-158
+  s_0ef73619c23226::t_49d60c8aed8046 31
+  s_0ef73619c23226::t_a91bec65f749b5 72
+.agents/skills/systematic-debugging/LICENSE
+  s_0ef73619c23226::t_2382bf3fe57c86 1-21
+.agents/skills/systematic-debugging/CREATION-LOG.md
+  s_0ef73619c23226::t_cc3579809103d1 1-119
+.agents/skills/systematic-debugging/test-pressure-3.md
+  s_0ef73619c23226::t_cc3579809103d1 1-69
+.gitignore
+  s_0ef73619c23226::t_721508430c2803 1-2
+.agents/skills/tidy/agents/openai.yaml
+  s_0ef73619c23226::t_b04da8054f248f 1-7
+.agents/skills/systematic-debugging/test-pressure-2.md
+  s_0ef73619c23226::t_cc3579809103d1 1-68
+.agents/skills/tidy/SKILL.md
+  s_0ef73619c23226::t_b04da8054f248f 1-143
+.agents/skills/systematic-debugging/defense-in-depth.md
+  s_0ef73619c23226::t_cc3579809103d1 1-122
+.agents/skills/tidy/evals/evals.json
+  s_0ef73619c23226::t_b04da8054f248f 1-148
+.agents/skills/tidy/references/context-errors.md
+  s_0ef73619c23226::t_b04da8054f248f 1-127
+.agents/skills/tidy/references/test-gate.md
+  s_0ef73619c23226::t_b04da8054f248f 1-21
+docs/investigation.md
+  s_0ef73619c23226::t_a8ddc4a4221095 1-81
+.agents/skills/tidy/references/performance-checklist.md
+  s_0ef73619c23226::t_b04da8054f248f 1-56
+.agents/skills/systematic-debugging/test-pressure-1.md
+  s_0ef73619c23226::t_cc3579809103d1 1-58
+.agents/skills/tidy/references/severity-rubric.md
+  s_0ef73619c23226::t_b04da8054f248f 1-51
+.agents/skills/systematic-debugging/find-polluter.sh
+  s_0ef73619c23226::t_cc3579809103d1 1-72
+.agents/skills/tidy/references/structural-quality-rubric.md
+  s_0ef73619c23226::t_b04da8054f248f 1-74
+.agents/skills/conventional-commits/SKILL.md
+  s_0ef73619c23226::t_2382bf3fe57c86 1-48
+.agents/skills/verification-before-completion/LICENSE
+  s_0ef73619c23226::t_2382bf3fe57c86 1-21
+.agents/skills/systematic-debugging/test-academic.md
+  s_0ef73619c23226::t_cc3579809103d1 1-14
+.agents/skills/tidy/LICENSE
+  s_0ef73619c23226::t_2382bf3fe57c86 1-21
+.agents/skills/tidy/references/ai-slop-patterns.md
+  s_0ef73619c23226::t_b04da8054f248f 1-211
+.agents/skills/verification-before-completion/SKILL.md
+  s_0ef73619c23226::t_cc3579809103d1 1-2,4-120
+  s_0ef73619c23226::t_2382bf3fe57c86 3
+AGENTS.md
+  s_0ef73619c23226::t_721508430c2803 1-17,21-48
+  s_0ef73619c23226::t_91c90fb746d81b 18-20
+docs/architecture.md
+  s_0ef73619c23226::t_ef2ee035134102 81-88,92-97
+  s_0ef73619c23226::t_a8ddc4a4221095 1-80,89-91,98-110
+.agents/skills/systematic-debugging/root-cause-tracing.md
+  s_0ef73619c23226::t_cc3579809103d1 1-169
+.agents/skills/tidy/references/security-checklist.md
+  s_0ef73619c23226::t_b04da8054f248f 1-103
+.agents/skills/systematic-debugging/SKILL.md
+  s_0ef73619c23226::t_2382bf3fe57c86 3,87-89,160,172
+  s_0ef73619c23226::t_cc3579809103d1 1-2,4-86,90-159,161-171,173-266
+.agents/skills/systematic-debugging/condition-based-waiting.md
+  s_0ef73619c23226::t_cc3579809103d1 1-115
+README.md
+  s_0ef73619c23226::t_a8ddc4a4221095 1-14,18-24,26-27
+  s_0ef73619c23226::t_ef2ee035134102 15-17
+  s_0ef73619c23226::t_721508430c2803 25
+.agents/skills/node/SKILL.md
+  s_0ef73619c23226::t_96c05d4284d561 1-2,4-5
+  s_0ef73619c23226::t_c919af15c52ac5 3,6-71
+docs/development.md
+  s_0ef73619c23226::t_91c90fb746d81b 13,37-39,45-56
+  s_0ef73619c23226::t_721508430c2803 1-12,14-36,40-44,57-61
+.agents/skills/node/LICENSE
+  s_0ef73619c23226::t_c919af15c52ac5 1-21
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "2d81cead3e9753b65203aa59b6bbe68d88770573",
+  "prompts": {},
+  "sessions": {
+    "s_0ef73619c23226": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a10dfc-e61b-7600-8fe4-5ecc56f6f070",
+        "model": "gpt-6.1-sol"
+      },
+      "human_author": "rafal-strozyk <rafal.strozyk@onet.pl>"
+    }
+  }
+}
