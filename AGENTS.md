@@ -42,7 +42,9 @@
 
 ## Verification
 
-No application build, lint, or test commands are established yet. For documentation
+Use pnpm for dependency management. Run `pnpm lint` for JavaScript lint checks
+and `pnpm lint:fix` to apply automatic fixes. No application build or integration
+test command is established yet. For documentation
 changes, check local links, Markdown structure, and whitespace. Validate modified
 skills with the skill-creator validator when available. Add implementation checks
 here when the toolchain exists; do not report nonexistent checks as passing.

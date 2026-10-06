@@ -20,6 +20,17 @@ Skills should be available on the next Codex turn. Use `/skills` to inspect the
 discovered list where supported; restart the Codex session if changes do not
 appear. Discovery in the specific JetBrains host has not been verified here.
 
+## JavaScript linting
+
+Use pnpm (version pinned in `package.json`) and commit `pnpm-lock.yaml`.
+Run `pnpm install`, then `pnpm lint`; use `pnpm lint:fix` for automatic fixes.
+The ESLint flat configuration applies its recommended JavaScript rules with
+Node.js globals. Formatting preferences and TypeScript linting are deferred
+until their conventions and implementation toolchain are selected.
+
+The integration experiment requires a separate Git AI test-support binary;
+linting does not execute it or verify commit and push behavior.
+
 ## Sources and local adaptations
 
 Installed on 2026-10-06 using skill-installer with an explicit repository-local
