@@ -1,0 +1,46 @@
+docs/architecture.md
+  s_496b4eecacd6e1::t_1c370466354bab 5
+  s_496b4eecacd6e1::t_1fb64b2feabc6d 3-4,41-42,66-68,73-75,81-84,87-89,95,105-106,112-118,123-126,130,134-135
+  s_496b4eecacd6e1::t_3530e49156bb9c 76-80
+docs/cli.md
+  s_496b4eecacd6e1::t_0ffa4e542d6ac4 56-57
+  s_496b4eecacd6e1::t_1b0e7c5c708110 101-105
+  s_496b4eecacd6e1::t_6fec62512ad3df 1-55,58-100,106-114
+docs/roadmap.md
+  s_496b4eecacd6e1::t_1c370466354bab 1-159
+docs/development.md
+  s_496b4eecacd6e1::t_3530e49156bb9c 48-51
+  s_496b4eecacd6e1::t_a117f775ef9a7a 3-4
+  s_496b4eecacd6e1::t_6fec62512ad3df 28-30,37-44,85-86
+README.md
+  s_496b4eecacd6e1::t_6fec62512ad3df 6-9,12-13,21-24,27-29
+  s_496b4eecacd6e1::t_1c370466354bab 32
+  s_496b4eecacd6e1::t_3530e49156bb9c 11
+  s_496b4eecacd6e1::t_db4db5b8060d74 10
+docs/investigation.md
+  s_496b4eecacd6e1::t_0ffa4e542d6ac4 8-9,37,47-48,68-74,119-122,129-131,138,141-143
+  s_496b4eecacd6e1::t_9df7c2d312fccc 3,10-15,19-36,38-46,49-66,87,112,117-118,123-128,132-133,137
+  s_496b4eecacd6e1::t_47ff67f35234d0 16-18,85-86,139-140
+  s_496b4eecacd6e1::t_62dc9284b3a929 67
+docs/decisions.md
+  s_496b4eecacd6e1::t_6fec62512ad3df 18,21-23,26,35-54
+  s_496b4eecacd6e1::t_3530e49156bb9c 29-34
+AGENTS.md
+  s_496b4eecacd6e1::t_6fec62512ad3df 52-59
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "cffdf8aff4125a15e7810a1ed5ad8c0175ada0f5",
+  "prompts": {},
+  "sessions": {
+    "s_496b4eecacd6e1": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a11336-e9dd-7031-b549-798617b77ee5",
+        "model": "gpt-6.1-sol"
+      },
+      "human_author": "rafal-strozyk <rafal.strozyk@onet.pl>"
+    }
+  }
+}
