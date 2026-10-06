@@ -1,0 +1,86 @@
+packages/core/src/process.ts
+  s_496b4eecacd6e1::t_c14e68f52f73cd 1-10,12-59,61-69,71,75-88,91-94,97,100-116,120
+  s_496b4eecacd6e1::t_fe23e281898129 11,95-96,98-99,117-119
+  s_496b4eecacd6e1::t_dfb56ca11c6645 72-74,89-90
+  s_496b4eecacd6e1::t_86a62ce7996b28 60,70
+tests/unit/statistics.test.mjs
+  s_496b4eecacd6e1::t_bb5d6f047060c8 59-67
+  s_496b4eecacd6e1::t_75cd6bb23cdd29 1-55,58
+  s_496b4eecacd6e1::t_5bf63ba01d4da7 56-57
+package.json
+  s_496b4eecacd6e1::t_c14e68f52f73cd 4-8,11-14
+  s_496b4eecacd6e1::t_8a804f2a7c4b23 21,23-25
+  s_496b4eecacd6e1::t_f26cf678bb98e8 15
+packages/core/src/index.ts
+  s_496b4eecacd6e1::t_1b0e7c5c708110 280,362
+  s_496b4eecacd6e1::t_fe23e281898129 1-70,72-91,93-181,186,197-212,223-236,247-258,260-263,269-279,281-361,363-371
+  s_496b4eecacd6e1::t_4749bb54eed4ad 71,92,182-185
+  s_496b4eecacd6e1::t_bb5d6f047060c8 213-222
+  s_496b4eecacd6e1::t_d3f57a9a4b5f3c 187-196,237-246,259,264-268
+packages/cli/src/main.ts
+  s_496b4eecacd6e1::t_fe23e281898129 1-48,55-129
+  s_496b4eecacd6e1::t_1fb64b2feabc6d 49-54
+eslint.config.mjs
+  s_496b4eecacd6e1::t_b3f8bbbc07eba1 3,7-9,49-52
+  s_496b4eecacd6e1::t_75cd6bb23cdd29 10
+tsconfig.json
+  s_496b4eecacd6e1::t_c14e68f52f73cd 1-19
+tests/fixtures/git-ai-1.7.5/initial.json
+  s_496b4eecacd6e1::t_a7d6cf5224070e 1-9
+tests/fixtures/git-ai-1.7.5/filtered.json
+  s_496b4eecacd6e1::t_a7d6cf5224070e 1-14
+tests/unit/process.test.mjs
+  s_496b4eecacd6e1::t_1b0e7c5c708110 41,45-46
+  s_496b4eecacd6e1::t_75cd6bb23cdd29 1-2,4-25,59
+  s_496b4eecacd6e1::t_dfb56ca11c6645 3,26-40,42-44,47-58
+tests/fixtures/git-ai-1.7.5/zero-additions.json
+  s_496b4eecacd6e1::t_a7d6cf5224070e 1-9
+tests/fixtures/git-ai-1.7.5/mixed-partial.json
+  s_496b4eecacd6e1::t_a7d6cf5224070e 1-14
+tests/fixtures/git-ai-1.7.5/README.md
+  s_496b4eecacd6e1::t_e08acd19b29da4 1-34
+tests/fixtures/git-ai-1.7.5/missing-note.json
+  s_496b4eecacd6e1::t_a7d6cf5224070e 1-9
+packages/core/src/statistics.ts
+  s_496b4eecacd6e1::t_86a62ce7996b28 28
+  s_496b4eecacd6e1::t_bb5d6f047060c8 54-55,58-72,74,76,80
+  s_496b4eecacd6e1::t_c14e68f52f73cd 1-27,29-53,56-57,73,75,77-79,81-98
+tests/fixtures/git-ai-1.7.5/explicit-ignore.json
+  s_496b4eecacd6e1::t_a7d6cf5224070e 1-14
+tests/integration/cli.test.mjs
+  s_496b4eecacd6e1::t_dfb56ca11c6645 59
+  s_496b4eecacd6e1::t_1b0e7c5c708110 220-221
+  s_496b4eecacd6e1::t_75cd6bb23cdd29 1-24,26-44,46-55,75-89,91-100,102-107,109-123,136-137,141-147,149-157,159-214,223-232,236-269,273-405
+  s_496b4eecacd6e1::t_86a62ce7996b28 69,90,101,108,148,158
+  s_496b4eecacd6e1::t_bb5d6f047060c8 215-219,222
+  s_496b4eecacd6e1::t_6c7dd4e6ff36ca 25,56-58,60-68,70-74,138-140
+  s_496b4eecacd6e1::t_d3f57a9a4b5f3c 406-421,443
+  s_496b4eecacd6e1::t_cd3db517bc874d 124-135
+  s_496b4eecacd6e1::t_5bf63ba01d4da7 45
+  s_496b4eecacd6e1::t_4749bb54eed4ad 233-235,270-272,422-442
+.gitignore
+  s_496b4eecacd6e1::t_c14e68f52f73cd 4
+packages/core/src/repository.ts
+  s_496b4eecacd6e1::t_c14e68f52f73cd 1,3-41,43,45-53,60-95,99,101-193
+  s_496b4eecacd6e1::t_cd3db517bc874d 54
+  s_496b4eecacd6e1::t_4749bb54eed4ad 2,44,55-59,96-98,100
+  s_496b4eecacd6e1::t_bf93c15a09a4eb 42
+pnpm-lock.yaml
+  s_496b4eecacd6e1::t_f5cd92a8778668 197-199,206-211,298-359,455-463,499-502,565-568,581-585,594-603,608-622,717-811,923-926,960-961,1018-1019,1028-1029,1036-1044,1049-1063
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "2be9b341b660f61af65c8811e73a892736993960",
+  "prompts": {},
+  "sessions": {
+    "s_496b4eecacd6e1": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a11336-e9dd-7031-b549-798617b77ee5",
+        "model": "gpt-6.1-sol"
+      },
+      "human_author": "rafal-strozyk <rafal.strozyk@onet.pl>"
+    }
+  }
+}
