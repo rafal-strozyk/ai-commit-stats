@@ -25,7 +25,14 @@ appear. Discovery in the specific JetBrains host has not been verified here.
 Use pnpm (version pinned in `package.json`) and commit `pnpm-lock.yaml`.
 Run `pnpm install`, then `pnpm lint`; use `pnpm lint:fix` for automatic fixes.
 The ESLint flat configuration applies its recommended JavaScript rules with
-Node.js globals. Formatting preferences and TypeScript linting are deferred
+Node.js globals. Control statements require braces, and blocks must span
+multiple lines. Use one tab per indentation level, displayed at a width of two
+spaces via `.editorconfig`, blank lines around control-flow blocks
+and before returns, and multiline nonempty object literals with one property per
+line. Empty objects may stay inline; imports and destructuring are unaffected.
+Group related declarations into small chunks separated by blank lines, as
+described in `AGENTS.md`; this requires judgment rather than a lint rule.
+Further formatting preferences and TypeScript linting are deferred
 until their conventions and implementation toolchain are selected.
 
 The integration experiment requires a separate Git AI test-support binary;

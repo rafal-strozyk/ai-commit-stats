@@ -10,8 +10,15 @@
 ## Code quality
 
 - Follow existing repository conventions and implement the smallest complete solution.
+- Use one tab per indentation level, displayed at a width of two spaces.
 - Avoid speculative abstractions, unrelated refactoring, and unnecessary dependencies.
 - Comment on non-obvious reasoning, not obvious syntax.
+- Group related variable declarations into small logical chunks, separated by
+  blank lines. Keep declarations near their use; avoid long uninterrupted lists.
+- Separate control-flow blocks from surrounding statements with blank lines,
+  and put a blank line before returns when another statement precedes them.
+  Use multiline nonempty object literals with one property per line; empty
+  objects may stay inline. ESLint enforces these mechanical formatting rules.
 - Do not suppress errors or weaken types to make checks pass.
 - Test observable behavior and meaningful failure cases, in proportion to the change.
 - Never claim a check passed unless it actually ran against the relevant changes.
