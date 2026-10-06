@@ -1,0 +1,32 @@
+package.json
+  s_b49a9570ee0945::t_fe0cc57d7cf1d6 1-3,5-6,13-14
+  s_b49a9570ee0945::t_2e98432af78a66 4
+  s_b49a9570ee0945::t_8aaec02fa1d3e4 8-12
+  s_b49a9570ee0945::t_a8a0f3e515e201 7
+.gitignore
+  s_b49a9570ee0945::t_fe0cc57d7cf1d6 3
+docs/development.md
+  s_b49a9570ee0945::t_420e8005b653ba 23-33
+AGENTS.md
+  s_b49a9570ee0945::t_4bd1ac4f1a1a04 45-47
+eslint.config.mjs
+  s_b49a9570ee0945::t_fe0cc57d7cf1d6 1-12
+pnpm-lock.yaml
+  s_b49a9570ee0945::t_cdc7ab7f95776b 1-802
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "083be979b4cc82163c1d2b88c8d5f097945429c9",
+  "prompts": {},
+  "sessions": {
+    "s_b49a9570ee0945": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a11311-cf13-7170-8458-21fc6f5c37d0",
+        "model": "gpt-6.1-sol"
+      },
+      "human_author": "rafal-strozyk <rafal.strozyk@onet.pl>"
+    }
+  }
+}
