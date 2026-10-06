@@ -1,0 +1,226 @@
+{
+  "status": "passed",
+  "startedAt": "2026-10-06T22:46:20.356Z",
+  "versions": {
+    "node": "v24.19.0",
+    "git": "git version 2.50.1 (Apple Git-155)",
+    "gitAi": "1.7.5 (debug)",
+    "build": "test-support overrides verified; source provenance recorded separately",
+    "binarySha256": "14bf5c94bdd103d2369afea936670311c924e9ef5559a4a964ab633c82d10e85",
+    "platform": "darwin-arm64"
+  },
+  "checks": [
+    {
+      "name": "initial commit attribution becomes available"
+    },
+    {
+      "name": "Git AI records the baseline addition as human in an available note"
+    },
+    {
+      "name": "mixed attribution matches partial commit, excludes unstaged line"
+    },
+    {
+      "name": "message-only amendment preserves tree, parents, author, index and working files"
+    },
+    {
+      "name": "Git AI attribution survives amendment"
+    },
+    {
+      "name": "repeated annotation keeps the same SHA"
+    },
+    {
+      "name": "bounded post-commit await measured",
+      "detail": {
+        "code": "1",
+        "output": "await: waiting for background service to finish work...\nawait: timed out after 1s\n"
+      }
+    },
+    {
+      "name": "await succeeds after outer commit returns"
+    },
+    {
+      "name": "zero-addition commit uses N/A"
+    },
+    {
+      "name": "push while background worker is pending publishes nothing"
+    },
+    {
+      "name": "retry push publishes annotated SHA"
+    },
+    {
+      "name": "explicit push of original SHA is blocked"
+    },
+    {
+      "name": "existing pre-commit hook runs through commit and amendment"
+    },
+    {
+      "name": "failed annotation state permits publication with warning and retry command"
+    },
+    {
+      "name": "stale expected HEAD fails without mutation"
+    },
+    {
+      "name": "explicit annotation retry clears failure"
+    },
+    {
+      "name": "successful statistics JSON with unknown additions does not prove attribution readiness"
+    },
+    {
+      "name": "missing attribution preserves commit and emits proposed recovery command"
+    },
+    {
+      "name": "negative control: --no-verify bypasses hook protection"
+    },
+    {
+      "name": "SSH signing configuration produces a verifiable amended signature"
+    },
+    {
+      "name": "compiled core preserves real Git AI attribution, staged/working files and verifiable signing with atomic annotation"
+    },
+    {
+      "name": "invalid JSON preserves commit, index and working files"
+    },
+    {
+      "name": "negative count preserves commit, index and working files"
+    },
+    {
+      "name": "inconsistent counts preserves commit, index and working files"
+    },
+    {
+      "name": "subprocess failure preserves commit, index and working files"
+    },
+    {
+      "name": "negative control: annotation and readiness inside pre-push still publish the previously selected SHA"
+    },
+    {
+      "name": "default, repository, gitattributes and explicit filters reconcile numerator and denominator"
+    },
+    {
+      "name": "compiled core copies mixed filtered attribution to its replacement without changing statistics"
+    },
+    {
+      "name": "negative control: main-worktree state does not protect an untracked linked-worktree commit"
+    },
+    {
+      "name": "linked-worktree annotation preserves its tree and the main worktree"
+    },
+    {
+      "name": "negative control: HEAD movement after final check amends the wrong commit with stale statistics"
+    },
+    {
+      "name": "negative control: replacing a single state entry allows an earlier pending SHA to be published"
+    },
+    {
+      "name": "single-entry guard still blocks the latest pending commit"
+    },
+    {
+      "name": "daemon unavailability is reported as a failure"
+    },
+    {
+      "name": "worker readiness timeout records failure, preserves commit and provides recovery"
+    },
+    {
+      "name": "owned processes stopped; global Git and Git AI configuration and identity unchanged"
+    }
+  ],
+  "observations": {
+    "initialNoteReadyMs": 95,
+    "initialStats": {
+      "human_additions": 1,
+      "unknown_additions": 0,
+      "ai_additions": 0,
+      "ai_accepted": 0,
+      "git_diff_deleted_lines": 0,
+      "git_diff_added_lines": 1,
+      "tool_model_breakdown": {}
+    },
+    "mixedNoteReadyMsAfterReturn": 94,
+    "commitAndReadinessMs": 115,
+    "mixedStats": {
+      "human_additions": 1,
+      "unknown_additions": 0,
+      "ai_additions": 2,
+      "ai_accepted": 2,
+      "git_diff_deleted_lines": 0,
+      "git_diff_added_lines": 3,
+      "tool_model_breakdown": {
+        "mock_ai::unknown": {
+          "ai_additions": 2,
+          "ai_accepted": 2
+        }
+      }
+    },
+    "awaitInsidePostCommit": {
+      "code": "1",
+      "output": "await: waiting for background service to finish work...\nawait: timed out after 1s\n"
+    },
+    "zeroStats": {
+      "human_additions": 0,
+      "unknown_additions": 0,
+      "ai_additions": 0,
+      "ai_accepted": 0,
+      "git_diff_deleted_lines": 0,
+      "git_diff_added_lines": 0,
+      "tool_model_breakdown": {}
+    },
+    "missingNoteStats": {
+      "human_additions": 0,
+      "unknown_additions": 1,
+      "ai_additions": 0,
+      "ai_accepted": 0,
+      "git_diff_deleted_lines": 0,
+      "git_diff_added_lines": 1,
+      "tool_model_breakdown": {}
+    },
+    "coreAnnotation": {
+      "mechanism": "commit-tree, copied and validated note, branch/state compare-and-swap transaction",
+      "preservedSnapshot": true,
+      "preservedStatistics": true,
+      "verifiedSshSignature": true,
+      "idempotent": true
+    },
+    "prePushAnnotation": {
+      "workerTraceRoot": "independent; GIT_TRACE2_PARENT_SID removed",
+      "pushAndAnnotationMs": 1455,
+      "publishedOriginalSha": true,
+      "amendedNoteAvailable": true
+    },
+    "filteredStats": {
+      "human_additions": 2,
+      "unknown_additions": 0,
+      "ai_additions": 4,
+      "ai_accepted": 4,
+      "git_diff_deleted_lines": 0,
+      "git_diff_added_lines": 6,
+      "tool_model_breakdown": {
+        "mock_ai::unknown": {
+          "ai_additions": 4,
+          "ai_accepted": 4
+        }
+      }
+    },
+    "explicitIgnoreStats": {
+      "human_additions": 2,
+      "unknown_additions": 0,
+      "ai_additions": 2,
+      "ai_accepted": 2,
+      "git_diff_deleted_lines": 0,
+      "git_diff_added_lines": 4,
+      "tool_model_breakdown": {
+        "mock_ai::unknown": {
+          "ai_additions": 2,
+          "ai_accepted": 2
+        }
+      }
+    },
+    "limitations": [
+      "Negative controls reproduce non-atomic amendment, forgotten earlier pending commits, linked-worktree coverage gaps and --no-verify bypass.",
+      "Strict publication protection is not established; this prototype must not be installed as production automation.",
+      "Test-support debug build and mock checkpoints do not prove installed release or embedded-agent compatibility.",
+      "Workers run under the harness or a synchronous research hook, not as installed detached post-commit workers.",
+      "SSH signing with a temporary unencrypted key is tested; GPG, hardware keys and interactive signing are not."
+    ],
+    "daemonLogTail": "2026-10-06T22:46:20.456576Z  INFO daemon started pid=56126 version=\"1.7.5\" os=\"macos\" arch=\"aarch64\"\n2026-10-06T22:46:20.460089Z  INFO socket health check started interval=30 control=<temporary-root>/control.sock trace=<temporary-root>/trace.sock\n2026-10-06T22:46:20.531183Z  INFO git write op completed op=\"commit\" repo=<temporary-root>/repo with spaces new_head=9dca010b7358a219dad0a27f801b667781ffa5ce\n2026-10-06T22:46:20.730504Z  INFO checkpoint received into bounded ingress component=\"daemon\" phase=\"checkpoint_receive\" receipt_seq=1 retained_bytes=547\n2026-10-06T22:46:20.730614Z  INFO checkpoint prepared for family admission component=\"daemon\" phase=\"checkpoint_admission\" receipt_seq=1 trace_id=t_f0d5446be8ed8b family=<temporary-root>/repo with spaces/.git file_count=1 retained_bytes=547 receipt_to_admission_ms=0\n2026-10-06T22:46:20.730667Z  INFO checkpoint start kind=AiAgent repo=<temporary-root>/repo with spaces\n2026-10-06T22:46:20.756895Z  INFO checkpoint done kind=AiAgent repo=<temporary-root>/repo with spaces duration_ms=26\n2026-10-06T22:46:20.757046Z  INFO checkpoint processing completed component=\"daemon\" phase=\"checkpoint_processing\" receipt_seq=1 trace_id=t_f0d5446be8ed8b family=<temporary-root>/repo with spaces/.git status=\"ok\" duration_ms=26\n2026-10-06T22:46:20.793305Z  INFO checkpoint received into bounded ingress component=\"daemon\" phase=\"checkpoint_receive\" receipt_seq=2 retained_bytes=443\n2026-10-06T22:46:20.793354Z  INFO checkpoint prepared for family admission component=\"daemon\" phase=\"checkpoint_admission\" receipt_seq=2 trace_id=t_5b48646b451bc2 family=<temporary-root>/repo with spaces/.git file_count=1 retained_bytes=443 receipt_to_admission_ms=0\n2026-10-06T22:46:20.793411Z  INFO checkpoint start kind=KnownHuman repo=<temporary-root>/repo with spaces\n2026-10-06T22:46:20.825210Z  INFO checkpoint done kind=KnownHuman repo=<temporary-root>/repo with spaces duration_ms=31\n2026-10-06T22:46:20.825342Z  INFO checkpoint processing completed component=\"daemon\" phase=\"checkpoint_processing\" receipt_seq=2 trace_id=t_5b48646b451bc2 family=<temporary-root>/repo with spaces/.git status=\"ok\" duration_ms=31\n2026-10-06T22:46:20.886696Z  INFO git write op completed op=\"commit\" repo=<temporary-root>/repo with spaces new_head=3905dfa9d14b87ca7da8e393652b03c69387f38c\n2026-10-06T22:46:21.256294Z  INFO git write op completed op=\"commit\" repo=<temporary-root>/repo with spaces new_head=bbe0e83e2249cd93fc19543a18f2eb1c5e62d4a3\n2026-10-06T22:46:23.181831Z  INFO git write op completed op=\"commit\" repo=<temporary-root>/repo with spaces new_head=3ac1a27d4157f1243cbf76c33cabcdefe78f67ab\n2026-10-06T22:46:23.556304Z  INFO git write op completed op=\"commit\" repo=<temporary-root>/repo with spaces new_head=f2caf4241d946a7b378441b04d1f419aef9aef49\n2026-10-06T22:46:23.995208Z  INFO git write op completed op=\"commit\" repo=<temporary-root>/repo with spaces new_head=e6e94faee307eb550cd5165b1563ec71e76b98b7\n2026-10-06T22:46:24.505143Z  INFO git write op completed op=\"commit\" repo=<temporary-root>/repo with spaces new_head=1f9c4fc00f5076250728d1fd9a27f0e24e4a8f2e\n2026-10-06T22:46:24.706662Z  INFO git write op completed op=\"push\" repo=<temporary-root>/repo with spaces new_head=\n2026-10-06T22:46:24.847178Z  INFO git write op completed op=\"push\" repo=<temporary-root>/repo with spaces new_head=\n2026-10-06T22:46:25.121965Z  INFO git write op completed op=\"push\" repo=<temporary-root>/repo with spaces new_head=\n2026-10-06T22:46:30.478205Z  INFO git write op completed op=\"commit\" repo=<temporary-root>/repo with spaces new_head=36df2979fa5b158b643869c85b12057ffd4ef69c\n2026-10-06T22:46:30.703325Z  INFO git write op completed op=\"commit\" repo=<temporary-root>/repo with spaces new_head=d74cbfec6e5740c4f7a73556715ab02d8d9744a9\n2026-10-06T22:46:30.884155Z  INFO git write op completed op=\"commit\" repo=<temporary-root>/repo with spaces new_head=74cbf9b05503e2f164a1885fa624dd633e5db4b3\n2026-10-06T22:46:32.784947Z  INFO git write op completed op=\"commit\" repo=<temporary-root>/repo with spaces new_head=8ebe33cf83d73a34fb07f492023a9025dc44b887\n2026-10-06T22:46:34.099422Z  WARN proceeding past an open mutating trace root component=\"daemon\" phase=\"checkpoint_processing\" reason=\"causal_grace_expired\" context=\"command\" root_sid=20261006T224632.850623Z-He138a664-P0000df48 root_primary=\"push\" root_family=\"<temporary-root>/repo with spaces/.git\" root_age_ms=1248 waited_ms=1003\n2026-10-06T22:46:34.116803Z  INFO git write op completed op=\"commit\" repo=<temporary-root>/repo with spaces new_head=dc58ea56b73aa375d05ebbd4ff69360751a7e663\n2026-10-06T22:46:34.262275Z  INFO git write op completed op=\"push\" repo=<temporary-root>/repo with spaces new_head=\n2026-10-06T22:46:34.545028Z  INFO git write op completed op=\"commit\" repo=<temporary-root>/filtered repo new_head=0f56dfb589703ff57e39f905f2dbbb380d5cccbf\n2026-10-06T22:46:34.683328Z  INFO checkpoint received into bounded ingress component=\"daemon\" phase=\"checkpoint_receive\" receipt_seq=3 retained_bytes=1736\n2026-10-06T22:46:34.683440Z  INFO checkpoint prepared for family admission component=\"daemon\" phase=\"checkpoint_admission\" receipt_seq=3 trace_id=t_4196acd3953d0d family=<temporary-root>/filtered repo/.git file_count=5 retained_bytes=1736 receipt_to_admission_ms=0\n2026-10-06T22:46:34.787619Z  INFO checkpoint start kind=AiAgent repo=<temporary-root>/filtered repo\n2026-10-06T22:46:34.831682Z  INFO checkpoint done kind=AiAgent repo=<temporary-root>/filtered repo duration_ms=44\n2026-10-06T22:46:34.831882Z  INFO checkpoint processing completed component=\"daemon\" phase=\"checkpoint_processing\" receipt_seq=3 trace_id=t_4196acd3953d0d family=<temporary-root>/filtered repo/.git status=\"ok\" duration_ms=44\n2026-10-06T22:46:34.838804Z  INFO checkpoint received into bounded ingress component=\"daemon\" phase=\"checkpoint_receive\" receipt_seq=4 retained_bytes=436\n2026-10-06T22:46:34.838872Z  INFO checkpoint prepared for family admission component=\"daemon\" phase=\"checkpoint_admission\" receipt_seq=4 trace_id=t_dbc65bb17e13d4 family=<temporary-root>/filtered repo/.git file_count=1 retained_bytes=436 receipt_to_admission_ms=0\n2026-10-06T22:46:34.838960Z  INFO checkpoint start kind=KnownHuman repo=<temporary-root>/filtered repo\n2026-10-06T22:46:34.881913Z  INFO checkpoint done kind=KnownHuman repo=<temporary-root>/filtered repo duration_ms=42\n2026-10-06T22:46:34.882082Z  INFO checkpoint processing completed component=\"daemon\" phase=\"checkpoint_processing\" receipt_seq=4 trace_id=t_dbc65bb17e13d4 family=<temporary-root>/filtered repo/.git status=\"ok\" duration_ms=42\n2026-10-06T22:46:34.944522Z  INFO git write op completed op=\"commit\" repo=<temporary-root>/filtered repo new_head=a0cca99c36fc46d6cfe6bf1a2298fef75fc548ae\n2026-10-06T22:46:35.934468Z  INFO git write op completed op=\"commit\" repo=<temporary-root>/linked worktree new_head=46e31a7b4aac7366ed700fb6a23e346975a5620b\n2026-10-06T22:46:36.128244Z  INFO git write op completed op=\"push\" repo=<temporary-root>/linked worktree new_head=\n2026-10-06T22:46:36.302910Z  INFO git write op completed op=\"commit\" repo=<temporary-root>/linked worktree new_head=4e75a93c473416dd6fbb52226978709480c51689\n2026-10-06T22:46:36.619430Z  INFO git write op completed op=\"commit\" repo=<temporary-root>/repo with spaces new_head=794695b5c16f2f39e6aa7e5a613017c3872cdf17\n2026-10-06T22:46:36.906389Z  INFO git write op completed op=\"commit\" repo=<temporary-root>/repo with spaces new_head=32dc0e3ed270fdb1913eba7b303a50ed790dee0b\n2026-10-06T22:46:37.158656Z  INFO git write op completed op=\"commit\" repo=<temporary-root>/repo with spaces new_head=69aaf0ae1ce5602b0114a17bd3f5be5913c922bb\n2026-10-06T22:46:37.688206Z  INFO checkpoint acceptance closed for graceful shutdown component=\"daemon\" phase=\"shutdown\"\n2026-10-06T22:46:37.738856Z  INFO daemon shutdown complete action=Stop\n"
+  },
+  "completedAt": "2026-10-06T22:46:38.144Z"
+}
