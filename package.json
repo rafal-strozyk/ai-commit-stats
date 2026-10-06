@@ -1,14 +1,27 @@
 {
   "name": "ai-commit-stats",
   "private": true,
+  "type": "module",
+  "bin": {
+    "acs": "dist/packages/cli/src/main.js",
+    "ai-commit-stats": "dist/packages/cli/src/main.js"
+  },
   "packageManager": "pnpm@12.9.1",
   "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "test": "pnpm build && node --test tests/unit/*.test.mjs tests/integration/cli.test.mjs",
+    "acs": "node dist/packages/cli/src/main.js",
+    "experiment:commit-workflow": "pnpm build && node tests/integration/commit-workflow-experiment.mjs",
     "lint": "eslint . --max-warnings 0",
     "lint:fix": "pnpm lint --fix"
   },
   "devDependencies": {
     "@eslint/js": "^10.0.1",
+    "@types/node": "^24.19.1",
     "eslint": "^10.12.0",
-    "globals": "^17.13.0"
+    "globals": "^17.13.0",
+    "typescript": "5.9.3",
+    "typescript-eslint": "^8.71.1"
   }
 }

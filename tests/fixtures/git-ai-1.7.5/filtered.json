@@ -1,0 +1,14 @@
+{
+  "human_additions": 2,
+  "unknown_additions": 0,
+  "ai_additions": 4,
+  "ai_accepted": 4,
+  "git_diff_deleted_lines": 0,
+  "git_diff_added_lines": 6,
+  "tool_model_breakdown": {
+    "mock_ai::unknown": {
+      "ai_additions": 4,
+      "ai_accepted": 4
+    }
+  }
+}
