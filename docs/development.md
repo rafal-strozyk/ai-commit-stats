@@ -1,6 +1,7 @@
 # Development guidance and skills
 
-Repository-wide conventions live in [AGENTS.md](../AGENTS.md). Focused workflows
+Repository-wide conventions live in [AGENTS.md](../AGENTS.md); implementation
+priorities are recorded in the [project roadmap](roadmap.md). Focused workflows
 live in `.agents/skills/` so they can be shared with the repository. Codex supports
 repository-local discovery from that directory. [Official skills documentation](https://learn.chatgpt.com/docs/build-skills#where-codex-loads-local-skills)
 
@@ -24,19 +25,30 @@ appear. Discovery in the specific JetBrains host has not been verified here.
 
 Use pnpm (version pinned in `package.json`) and commit `pnpm-lock.yaml`.
 Run `pnpm install`, then `pnpm lint`; use `pnpm lint:fix` for automatic fixes.
-The ESLint flat configuration applies its recommended JavaScript rules with
-Node.js globals. Control statements require braces, and blocks must span
+The ESLint flat configuration applies recommended JavaScript and package
+TypeScript rules with Node.js globals; compiled output and vendored TypeScript
+skill examples are outside the source lint scope. Control statements require braces, and blocks must span
 multiple lines. Use one tab per indentation level, displayed at a width of two
 spaces via `.editorconfig`, blank lines around control-flow blocks
 and before returns, and multiline nonempty object literals with one property per
 line. Empty objects may stay inline; imports and destructuring are unaffected.
 Group related declarations into small chunks separated by blank lines, as
 described in `AGENTS.md`; this requires judgment rather than a lint rule.
-Further formatting preferences and TypeScript linting are deferred
-until their conventions and implementation toolchain are selected.
+TypeScript uses strict checking, unchecked-index checks and exact optional
+properties. Source modules use NodeNext ESM with `.js` import specifiers for the
+compiled files; no native TypeScript runtime is used.
+
+Run `pnpm typecheck` for compiler checking, `pnpm build` for emitted JavaScript,
+and `pnpm test` for unit tests plus disposable-repository CLI tests. The latter
+use controlled Git AI subprocess output for deterministic failure and concurrency
+cases; they do not prove compatibility with a real attribution engine by themselves.
 
 The integration experiment requires a separate Git AI test-support binary;
 linting does not execute it or verify commit and push behavior.
+Run `pnpm experiment:commit-workflow <absolute-test-binary> [report.json]` using
+the [reproduction instructions](../tests/integration/README.md). The command is
+a research check, not an application integration test suite. A passing result
+includes expected negative controls and does not certify production safety.
 
 ## Sources and local adaptations
 
@@ -70,8 +82,8 @@ package-level choices; the skill does not establish a toolchain.
 
 Generic TypeScript and JavaScript testing skills are deferred. A project-specific
 Git integration testing skill can be added after the feasibility experiment has
-established reproducible procedures. Strict compiler, lint, and CI checks will be
-configured with the implementation toolchain rather than treated as existing gates.
+established reproducible procedures. Compiler and lint checks now accompany the
+development CLI; CI is not yet configured.
 
 To update vendored skills, review the new source and license, install into a
 temporary directory, compare it with the local copy, preserve intentional local

@@ -1,7 +1,8 @@
 # Architecture
 
-Status: design in progress. Requirements below are agreed; the automatic commit
-mechanism remains unproven. See [decisions](decisions.md) and
+Status: shared core and development CLI implemented and tested. Automatic
+commit registration, worker launch, installers and editor integrations remain
+unimplemented. See [roadmap](roadmap.md), [decisions](decisions.md) and
 [investigation](investigation.md).
 
 ## User experience
@@ -37,8 +38,8 @@ docs/
   investigation.md
 ```
 
-This is a target layout; implementation directories will be created when they
-contain actual code or fixtures.
+Core, CLI, integration tests and fixtures now exist. Editor directories remain
+part of the target layout and will be created when implementation starts.
 
 Both core and CLI use TypeScript. JetBrains invokes the CLI as a subprocess;
 VS Code uses the same CLI interface. Attribution and message rewriting belong in
@@ -62,21 +63,36 @@ and working files. A message amendment creates a new SHA and needs attribution
 preserved for that resulting commit. Signing behavior must be validated.
 
 Push coordination must prevent selected commits from being published while
-annotation is pending or has failed. Waiting alone is insufficient: Git may have
+annotation is pending. A terminal calculation failure permits publication with
+a warning and retry command. Protection applies while hooks are active;
+deliberate bypasses such as `--no-verify` are allowed. Waiting alone is insufficient: Git may have
 already selected the old SHA for a push. The eventual implementation must check
 the selected push objects and either complete safely or abort with a retry
 instruction. It must also account for explicit SHA pushes, concurrent Git
 commands, recursion, existing hooks, and worktrees. The precise mechanism is
-still under investigation; this is not an implemented guarantee.
+implemented for recorded jobs in the CLI evaluator. Automatic registration and
+hook/worker installation remain under investigation, so repository-wide
+automatic coverage is not yet an implemented guarantee.
+
+The [Git AI 1.7.5 experiment](../tests/integration/README.md) confirms that
+waiting for annotation inside `pre-push` can still publish the originally
+selected SHA. It also reproduces wrong-commit amendment after a HEAD race,
+forgotten pending commits with single-entry state, linked-worktree coverage
+gaps, and `--no-verify` bypass. The core's explicit-branch compare-and-swap
+transaction and shared per-commit state address the demonstrated amendment and
+state races for manual annotation. The accepted protection scope excludes
+deliberate hook bypasses. Detached automation still needs its own validation.
 
 If attribution or annotation fails, keep the original commit and message. Emit
-a clear terminal diagnostic and expose the failure in editor status. Provide a
+a clear terminal diagnostic and expose the failure in future editor status. Allow
+push without statistics while printing the failure explanation and a retry.
+Provide a
 copyable command to retry the affected commit, including the repository and
 expected SHA. Never present missing attribution as zero AI usage or confirmed
 human authorship. Uninstallation must not silently remove a shared Git AI
 installation used elsewhere.
 
-## Proposed CLI and statistics
+## CLI and statistics
 
 Expose both `ai-commit-stats` and the short command `acs` with identical arguments
 and behavior. Install `acs` as an executable entry point, not a shell alias, so it
@@ -86,25 +102,34 @@ managed executable path rather than relying on the user's PATH. Setup must make
 the short command available in terminals and report any existing command-name
 collision instead of overwriting it.
 
-These interfaces are proposals, not commands available today:
+Implemented development commands (use `pnpm acs` until executable installation
+and standalone distribution are implemented):
 
 ```text
 acs inspect --repo <path> --commit <sha> --json
 acs annotate --repo <path> --expected-head <sha> --json
-acs install --repo <path>
 acs status --repo <path> --json
+acs check-push --repo <path> --json < pre-push-records
+```
+
+Repository lifecycle commands remain proposals:
+
+```text
+acs install --repo <path>
 acs repair --repo <path>
 acs uninstall --repo <path>
 ```
 
-Start explicit annotation with the current HEAD; never silently annotate a
-different commit if HEAD has moved. Historical recovery needs a separate design
+Start explicit annotation with the current HEAD and capture its branch. Update
+only that explicit branch if it still points to the expected SHA; another commit
+or a newly checked-out branch must never be silently annotated instead.
+Historical recovery needs a separate design
 before support can be promised. Generated retry instructions must quote paths
 for the user's shell and explain an expected-HEAD mismatch.
 
-The proposed footer has version, AI-added, human-added, unknown-added, and
+The version 1 footer has version, AI-added, human-added, unknown-added, and
 AI-share-added trailers. Preserve unrelated message content and trailers;
 repeated annotation must not duplicate the footer. The intended percentage is
 AI additions divided by additions counted under Git AI's effective filtering,
-with `N/A` for zero additions. Exact trailer names and filtering compatibility
-will be finalized against versioned fixtures.
+with `N/A` for zero additions. Names and filtering are documented against the
+versioned Git AI 1.7.5 fixtures in [CLI usage](cli.md).

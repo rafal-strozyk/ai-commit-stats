@@ -49,9 +49,14 @@
 
 ## Verification
 
-Use pnpm for dependency management. Run `pnpm lint` for JavaScript lint checks
-and `pnpm lint:fix` to apply automatic fixes. No application build or integration
-test command is established yet. For documentation
+Use pnpm for dependency management. Run `pnpm lint` for JavaScript and package
+TypeScript lint checks and `pnpm lint:fix` to apply automatic fixes.
+Run `pnpm typecheck`, `pnpm build`, and `pnpm test` for implementation changes.
+The tests use disposable Git repositories and a controlled Git AI subprocess;
+the separate `pnpm experiment:commit-workflow <test-support-binary> [report.json]`
+also builds the CLI and checks real Git AI behavior with isolated state.
+It requires socket permission and a separately built test-support binary.
+For documentation
 changes, check local links, Markdown structure, and whitespace. Validate modified
 skills with the skill-creator validator when available. Add implementation checks
 here when the toolchain exists; do not report nonexistent checks as passing.
